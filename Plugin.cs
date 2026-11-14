@@ -6,12 +6,12 @@ using HarmonyLib;
 
 namespace BetterQoL;
 
-[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+[BepInPlugin("BetterQoL", "BetterQoL", "1.0.0")]
 [BepInProcess("Among Us.exe")]
 public class BetterQoLPlugin : BasePlugin
 {
 	internal static new ManualLogSource Log;
-	private static readonly Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+	private static readonly Harmony harmony = new Harmony("BetterQoL");
 
 	/// <summary>
 	/// Chat cooldown in seconds, written as "sec.ms" (e.g. "2.2").
@@ -68,7 +68,7 @@ public class BetterQoLPlugin : BasePlugin
 
 		harmony.PatchAll();
 
-		Log.LogInfo($"{MyPluginInfo.PLUGIN_GUID} loaded - chat QoL (dark theme: {ChatDarkTheme.Value}, custom cooldown: {CustomChatCooldown.Value}, bypass limit: {BypassCharacterLimit.Value}), cosmetics (unlock: {UnlockCosmetics.Value})");
+		Log.LogInfo($"BetterQoL loaded - chat QoL (dark theme: {ChatDarkTheme.Value}, custom cooldown: {CustomChatCooldown.Value}, bypass limit: {BypassCharacterLimit.Value}), cosmetics (unlock: {UnlockCosmetics.Value})");
 	}
 
 	/// <summary>

@@ -21,7 +21,7 @@ internal static class ShopButtonVisualPatch
 
 internal static class ShopButtonVisualState
 {
-	private const float GrayAmount = 0.35f;
+	private const float GrayAmount = 0.85f;
 	private static MainMenuManager cachedManager;
 	private static SpriteRenderer[] renderers;
 	private static Color[] originalRendererColors;
